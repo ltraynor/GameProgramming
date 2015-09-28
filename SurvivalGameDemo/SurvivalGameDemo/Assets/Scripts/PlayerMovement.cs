@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
 
-	public float movementSpeed = 6f;
+	public float movementSpeed = 10f;
 	public float turnSpeed = 100f;
 
 	Rigidbody playerRigidbody;
@@ -19,6 +19,9 @@ public class PlayerMovement : MonoBehaviour {
 	void Update () {
 		float forwardMovement = Input.GetAxis("Vertical");
 		float turnMovement = Input.GetAxis("Horizontal");
+
+		Debug.Log (forwardMovement);
+		//Debug.Log (turnMovement);
 
 		if ((forwardMovement == 0) && (turnMovement == 0)) {
 			playerAnimator.SetBool ("IsWalking", false);
